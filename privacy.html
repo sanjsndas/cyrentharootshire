@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rootshire Pavilion · privacy</title>
+  <!-- unique typography: system + serif accent, no generic fonts -->
+  <style>
+    /* ----- reset & base ----- */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #f6f3ec;  /* warm paper */
+      color: #1f2a1f;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.7;
+      padding: 0 1.5rem;
+    }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
+    .container {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 1.5rem 0 3rem;
+    }
+
+    /* ----- unique color palette: earth & stone ----- */
+    :root {
+      --root-bg: #f6f3ec;
+      --root-text: #1f2a1f;
+      --root-accent: #4f6b4a;    /* sage */
+      --root-accent-light: #7d9b74;
+      --root-warm: #c9b69a;      /* clay */
+      --root-dark: #2b3a2b;
+      --root-card-bg: #ffffffd9;
+      --root-border: #dcd3c4;
+      --root-shadow: 0 12px 30px -12px rgba(40, 50, 30, 0.12);
+    }
+
+    /* ----- unique typography & spacing ----- */
+    h1, h2, h3, h4 {
+      font-family: 'Cormorant Garamond', 'Times New Roman', serif;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      color: #1f2a1f;
+    }
+    h1 { font-size: 3.2rem; margin-bottom: 0.5rem; }
+    h2 { font-size: 2.4rem; margin: 2.5rem 0 1rem; border-left: 6px solid var(--root-accent); padding-left: 1.2rem; }
+    h3 { font-size: 1.7rem; margin: 2rem 0 0.8rem; color: #2e422e; }
+    h4 { font-size: 1.3rem; margin: 1.2rem 0 0.4rem; }
+    p { margin-bottom: 1.2rem; max-width: 75ch; }
+    .lead { font-size: 1.2rem; color: #2f3f2a; }
+
+    /* ---- header / nav (unique) ---- */
+    .site-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.2rem 0 0.8rem;
+      border-bottom: 2px solid var(--root-border);
+      margin-bottom: 2.5rem;
+    }
+    .brand {
+      font-size: 2.1rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      background: var(--root-dark);
+      color: #f2ede4;
+      padding: 0.1rem 1.2rem 0.2rem;
+      border-radius: 40px 8px 40px 8px;
+      transform: rotate(-0.5deg);
+    }
+    .brand span { font-weight: 300; color: var(--root-warm); }
+    .nav-links {
+      display: flex;
+      gap: 2.2rem;
+      font-weight: 500;
+      font-size: 1.05rem;
+    }
+    .nav-links a { padding: 0.2rem 0; border-bottom: 2px solid transparent; transition: 0.15s; }
+    .nav-links a:hover { border-bottom-color: var(--root-accent); color: #2b402b; }
+
+    /* privacy cards & sections */
+    .privacy-card {
+      background: var(--root-card-bg);
+      backdrop-filter: blur(2px);
+      border: 1px solid var(--root-border);
+      border-radius: 28px 8px 28px 8px;
+      padding: 2rem 2.5rem;
+      box-shadow: var(--root-shadow);
+      margin: 2rem 0;
+    }
+    .privacy-card h3 {
+      margin-top: 0;
+      border-left: none;
+      padding-left: 0;
+      font-size: 1.9rem;
+    }
+    .privacy-card ul {
+      list-style: none;
+      padding: 0;
+    }
+    .privacy-card li {
+      padding: 0.7rem 0;
+      border-bottom: 1px dashed #d8cebc;
+      display: flex;
+      gap: 0.8rem;
+      align-items: baseline;
+    }
+    .privacy-card li:last-child { border-bottom: none; }
+    .privacy-card li strong { min-width: 10ch; color: #2b3a2b; }
+
+    .inline-icon {
+      background: var(--root-warm);
+      border-radius: 40px;
+      padding: 0.1rem 0.9rem;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: #1f2a1f;
+    }
+
+    /* footer */
+    .footer {
+      border-top: 2px solid var(--root-border);
+      margin-top: 3rem;
+      padding: 2.5rem 0 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 750px) {
+      .site-header { flex-direction: column; align-items: start; gap: 0.8rem; }
+      .nav-links { flex-wrap: wrap; gap: 1.2rem; }
+      .privacy-card { padding: 1.5rem; }
+    }
+
+    .mt-2 { margin-top: 1.8rem; }
+    .mb-1 { margin-bottom: 0.6rem; }
+    .flex { display: flex; flex-wrap: wrap; gap: 1.2rem; align-items: center; }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <!-- header (exactly as in contact, but active page = privacy) -->
+  <header class="site-header">
+    <div class="brand">Cyrentha Rootshire<span>Pavilion</span></div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="terms.html">Terms Of Privacy</a>
+      <a href="privacy.html" style="border-bottom-color: var(--root-accent);">Privacy Policy</a>
+      <a href="cookies.html">Cookies Policy</a>
+    </div>
+  </header>
+
+  <!-- page title -->
+  <div style="margin-bottom: 1rem;">
+    <h1 style="font-size: 3rem; border-left: 6px solid var(--root-warm); padding-left: 1.2rem;">Privacy Policy</h1>
+    <p class="lead" style="max-width: 60ch;">Your trust is the root of our garden. This policy explains how we care for your personal data.</p>
+  </div>
+
+  <!-- privacy content: unique, detailed, in harmony with the brand -->
+  <div class="privacy-card">
+    <h3>🌱 Our commitment</h3>
+    <p>At Rootshire Pavilion, we believe in transparency and simplicity. We collect only what is necessary to tend to your inquiries, event registrations, and garden correspondence. This privacy policy was last reviewed in April 2026.</p>
+    <p>We never sell or rent your personal information. Any data you share is used solely to enrich your experience with our grounds and community.</p>
+  </div>
+
+  <div class="privacy-card">
+    <h3>📋 What we collect</h3>
+    <ul>
+      <li><strong>Contact details</strong> <span>— name, email address, telephone number (if you provide it).</span></li>
+      <li><strong>Correspondence</strong> <span>— messages, inquiries, and notes you send via our contact form or direct email.</span></li>
+      <li><strong>Event preferences</strong> <span>— workshops, garden tours, or talks you express interest in.</span></li>
+      <li><strong>Technical data</strong> <span>— anonymised IP address, browser type, and referral page for analytics (see our Cookie Policy).</span></li>
+    </ul>
+  </div>
+
+  <div class="privacy-card">
+    <h3>🔒 How we use your data</h3>
+    <ul>
+      <li><strong>Response</strong> <span>— to reply to your messages and provide the information you request.</span></li>
+      <li><strong>Booking</strong> <span>— to confirm your place at events and send practical details.</span></li>
+      <li><strong>Improvement</strong> <span>— to understand which parts of our website and gardens interest you most.</span></li>
+      <li><strong>Legal</strong> <span>— to comply with any applicable legal obligations (e.g., records retention).</span></li>
+    </ul>
+  </div>
+
+  <div class="privacy-card">
+    <h3>📦 Data storage & security</h3>
+    <p>Your data is stored on secure servers located in the United Kingdom. We use industry-standard encryption and access controls. Only essential team members have access, and they are trained in data stewardship.</p>
+    <p>We keep your data for as long as necessary to fulfill the purposes outlined above, or as required by law. If you wish to have your data removed, please contact us — we will respond promptly.</p>
+  </div>
+
+  <div class="privacy-card">
+    <h3>🤝 Your rights</h3>
+    <ul>
+      <li><strong>Access</strong> <span>— you can request a copy of the data we hold about you.</span></li>
+      <li><strong>Rectification</strong> <span>— you may update or correct your information at any time.</span></li>
+      <li><strong>Erasure</strong> <span>— you can ask us to delete your data, subject to legal requirements.</span></li>
+      <li><strong>Objection</strong> <span>— you can object to certain uses of your data (e.g., direct marketing).</span></li>
+    </ul>
+    <p style="margin-top: 1rem;">To exercise any of these rights, simply write to us at <a href="mailto:privacy@rootshirepavilion.co.uk" style="color: #4f6b4a; font-weight: 500;">privacy@rootshirepavilion.co.uk</a> or send a letter to our Wold Lane address.</p>
+  </div>
+
+  <div class="privacy-card">
+    <h3>🍃 Third‑party services</h3>
+    <p>We use minimal third‑party tools to keep our website running and to understand visitor patterns. These include:</p>
+    <ul>
+      <li><strong>Analytics</strong> <span>— privacy‑friendly, aggregated statistics (no personal data shared).</span></li>
+      <li><strong>Email</strong> <span>— we use a secure email service to manage correspondence; your messages are never stored elsewhere.</span></li>
+    </ul>
+    <p>We do not integrate social media plugins that track you without consent. Any external links are clearly marked and governed by their own policies.</p>
+  </div>
+
+  <!-- additional brand note, like a colophon -->
+  <div style="background: #e8e1d4; border-radius: 60px 8px 60px 8px; padding: 1.8rem 2.2rem; margin: 2.5rem 0; border:1px solid #cec0ad;">
+    <div style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: space-between;">
+      <div>
+        <h2 style="border-left: none; padding-left:0; margin-top:0; font-size: 2rem;">Rootshire care</h2>
+        <ul style="list-style: none; padding:0;">
+          <li style="padding: 0.4rem 0;">• <a href="#" style="font-weight:500;">Data protection officer</a> — available for questions</li>
+          <li style="padding: 0.4rem 0;">• <a href="#" style="font-weight:500;">Request your data</a> (subject access request)</li>
+          <li style="padding: 0.4rem 0;">• <a href="#" style="font-weight:500;">Withdraw consent</a> at any time</li>
+        </ul>
+      </div>
+      <div style="text-align: right;">
+        <span style="background: #2b3a2b; color: #f0ece3; padding: 0.3rem 1.8rem; border-radius: 60px;">GDPR compliant</span>
+        <div style="margin-top: 0.8rem;"><span style="background: #c9b69a; padding: 0.2rem 1.2rem; border-radius: 40px;">🔐 encrypted & secure</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- footer -->
+  <footer class="footer">
+    <div>© 2026 Rootshire Pavilion · cultivated since 2019</div>
+    <div style="display: flex; gap: 1.8rem;">
+      <a href="#">Privacy</a>
+      <a href="#">Colophon</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>

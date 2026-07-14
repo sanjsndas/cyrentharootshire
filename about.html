@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About · Rootshire Pavilion</title>
+  <!-- unique typography: system + serif accent, no generic fonts -->
+  <style>
+    /* ----- reset & base (mirroring homepage) ----- */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #f6f3ec;  /* warm paper */
+      color: #1f2a1f;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.7;
+      padding: 0 1.5rem;
+    }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
+    .container {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 1.5rem 0 3rem;
+    }
+
+    /* ----- color palette: earth & stone (same as index) ----- */
+    :root {
+      --root-bg: #f6f3ec;
+      --root-text: #1f2a1f;
+      --root-accent: #4f6b4a;    /* sage */
+      --root-accent-light: #7d9b74;
+      --root-warm: #c9b69a;      /* clay */
+      --root-dark: #2b3a2b;
+      --root-card-bg: #ffffffd9;
+      --root-border: #dcd3c4;
+      --root-shadow: 0 12px 30px -12px rgba(40, 50, 30, 0.12);
+    }
+
+    /* ----- unique typography & spacing ----- */
+    h1, h2, h3, h4 {
+      font-family: 'Cormorant Garamond', 'Times New Roman', serif;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      color: #1f2a1f;
+    }
+    h1 { font-size: 3.2rem; margin-bottom: 0.5rem; }
+    h2 { font-size: 2.4rem; margin: 2.5rem 0 1rem; border-left: 6px solid var(--root-accent); padding-left: 1.2rem; }
+    h3 { font-size: 1.7rem; margin: 2rem 0 0.8rem; color: #2e422e; }
+    h4 { font-size: 1.3rem; margin: 1.2rem 0 0.4rem; }
+    p { margin-bottom: 1.2rem; max-width: 75ch; }
+    .lead { font-size: 1.2rem; color: #2f3f2a; }
+
+    /* ---- header / nav (unique) ---- */
+    .site-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.2rem 0 0.8rem;
+      border-bottom: 2px solid var(--root-border);
+      margin-bottom: 2.5rem;
+    }
+    .brand {
+      font-size: 2.1rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      background: var(--root-dark);
+      color: #f2ede4;
+      padding: 0.1rem 1.2rem 0.2rem;
+      border-radius: 40px 8px 40px 8px;
+      transform: rotate(-0.5deg);
+    }
+    .brand span { font-weight: 300; color: var(--root-warm); }
+    .nav-links {
+      display: flex;
+      gap: 2.2rem;
+      font-weight: 500;
+      font-size: 1.05rem;
+    }
+    .nav-links a { padding: 0.2rem 0; border-bottom: 2px solid transparent; transition: 0.15s; }
+    .nav-links a:hover { border-bottom-color: var(--root-accent); color: #2b402b; }
+
+    /* ---- cards & modules (unique card design) ---- */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 2.2rem;
+      margin: 2.5rem 0;
+    }
+    .card {
+      background: var(--root-card-bg);
+      backdrop-filter: blur(2px);
+      border: 1px solid var(--root-border);
+      border-radius: 28px 8px 28px 8px;
+      padding: 1.8rem 1.8rem 2.2rem;
+      box-shadow: var(--root-shadow);
+      transition: transform 0.1s ease, box-shadow 0.2s;
+    }
+    .card:hover { transform: translateY(-4px); box-shadow: 0 20px 35px -16px rgba(40, 50, 30, 0.2); }
+    .card .tag {
+      display: inline-block;
+      background: var(--root-accent);
+      color: white;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 0.2rem 0.9rem;
+      border-radius: 30px;
+      margin-bottom: 1rem;
+    }
+    .card h3 { margin-top: 0.2rem; border-left: none; padding-left: 0; font-size: 1.7rem; }
+    .card p { font-size: 0.98rem; color: #2d3d2d; }
+
+    /* hero about unique */
+    .hero-about {
+      background: #e8e1d4;
+      background-image: radial-gradient(circle at 70% 20%, #dacfc0 0%, #e8e1d4 90%);
+      padding: 3rem 3rem;
+      border-radius: 60px 12px 60px 12px;
+      margin-bottom: 3rem;
+      border: 1px solid #cec0ad;
+    }
+    .hero-about h1 { font-size: 3.6rem; max-width: 14ch; }
+    .hero-about .lead { font-size: 1.4rem; max-width: 60ch; margin-top: 0.5rem; }
+
+    /* about specific: team avatars */
+    .team-avatar {
+      background: #cdc1ae;
+      width: 80px;
+      height: 80px;
+      border-radius: 80px 12px 80px 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.2rem;
+      border: 1px solid #b7aa96;
+      margin-bottom: 0.8rem;
+    }
+    .stat-badge {
+      background: #2b3a2b;
+      color: #f0ece3;
+      padding: 0.1rem 1rem;
+      border-radius: 40px;
+      font-size: 0.8rem;
+      letter-spacing: 0.5px;
+    }
+
+    /* infographic / milestones */
+    .milestone {
+      background: #d6cfbf;
+      border-radius: 40px 4px 40px 4px;
+      padding: 1.8rem 1.5rem;
+      border: 1px solid #b7aa96;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+      margin: 2rem 0;
+    }
+    .milestone-item { text-align: center; flex: 1 0 120px; }
+
+    /* footer */
+    .footer {
+      border-top: 2px solid var(--root-border);
+      margin-top: 3rem;
+      padding: 2.5rem 0 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      font-size: 0.9rem;
+    }
+
+    /* responsiveness */
+    @media (max-width: 750px) {
+      .site-header { flex-direction: column; align-items: start; gap: 0.8rem; }
+      .nav-links { flex-wrap: wrap; gap: 1.2rem; }
+      .hero-about h1 { font-size: 2.8rem; }
+      .hero-about { padding: 2rem 1.5rem; }
+    }
+    .flex { display: flex; flex-wrap: wrap; gap: 1.2rem; }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <!-- header (same as index) -->
+  <header class="site-header">
+    <div class="brand">Cyrentha Rootshire<span>Pavilion</span></div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html" style="border-bottom-color: var(--root-accent);">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="terms.html">Terms Of Privacy</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="cookies.html">Cookies Policy</a>
+    </div>
+  </header>
+
+  <!-- about hero -->
+  <section class="hero-about">
+    <div style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: center;">
+      <div style="flex: 2;">
+        <h1>Rooted in <br>observation</h1>
+        <p class="lead">Rootshire Pavilion is a quiet corner of the internet for gardeners who read, learn, and grow. No fluff — just deep, researched horticulture.</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 1.2rem;">
+          <span class="stat-badge">📖 200+ articles</span>
+          <span class="stat-badge">🌱 15+ years</span>
+          <span class="stat-badge">🧪 zone 6b trial garden</span>
+        </div>
+      </div>
+      <div style="flex: 1; min-width: 140px;">
+        <!-- about hero image -->
+        <div style="background: #b7aa96; border-radius: 120px 8px 120px 8px; padding: 1.8rem 0.8rem; border: 1px solid #9f907c; text-align: center; color: #1f2a1f; box-shadow: var(--root-shadow);">
+          <span style="font-size: 2.8rem;">🌿</span><br>
+          <span style="background: #2b3a2b; color: #f0ece3; padding: 0.1rem 0.8rem; border-radius: 30px;">since 2019</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- mission & values -->
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; margin: 2rem 0 3rem;">
+    <div>
+      <h2 style="border-left-color: #c9b69a;">Our mission</h2>
+      <p style="font-size: 1.1rem;">To cultivate a library of practical, evidence‑informed gardening knowledge — without the noise. We believe in soil, patience, and the long view.</p>
+      <p>Every article is grounded in hands‑on trials, peer‑reviewed research, and the wisdom of traditional practices. We garden in zone 6b, but our insights travel.</p>
+    </div>
+    <div>
+      <h2 style="border-left-color: #7d9b74;">What we stand for</h2>
+      <ul style="list-style: none; padding: 0;">
+        <li style="padding: 0.5rem 0; border-bottom: 1px dashed #d8cebc;">🌳 <strong>Biodiversity first</strong> — polycultures over monocultures</li>
+        <li style="padding: 0.5rem 0; border-bottom: 1px dashed #d8cebc;">🧪 <strong>Curiosity over certainty</strong> — we update as we learn</li>
+        <li style="padding: 0.5rem 0; border-bottom: 1px dashed #d8cebc;">📚 <strong>Deep content</strong> — 1500+ word guides, not listicles</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- team section (unique) -->
+  <h2>Gardeners & writers</h2>
+  <div class="card-grid">
+    <div class="card">
+      <div class="team-avatar">🌾</div>
+      <h4>Cyrentha Rootshire</h4>
+      <p style="font-size:0.95rem;">Founder & head gardener. Former agroecology researcher, 20 years of no‑dig experience. She writes about soil and perennial systems.</p>
+      <span class="stat-badge" style="background: #4f6b4a;">editor</span>
+    </div>
+    <div class="card">
+      <div class="team-avatar">🍅</div>
+      <h4>Marco Velez</h4>
+      <p style="font-size:0.95rem;">Vegetable specialist. Trials 40+ tomato varieties each season. Passionate about seed saving and fermentation.</p>
+      <span class="stat-badge" style="background: #4f6b4a;">contributor</span>
+    </div>
+    <div class="card">
+      <div class="team-avatar">🐝</div>
+      <h4>Elena Park</h4>
+      <p style="font-size:0.95rem;">Pollinator & native plant advocate. Designs habitat gardens and writes about ecological restoration in small spaces.</p>
+      <span class="stat-badge" style="background: #4f6b4a;">contributor</span>
+    </div>
+  </div>
+
+  <!-- milestones / infographic -->
+  <div class="milestone">
+    <div class="milestone-item"><span style="font-size: 2.4rem;">📅</span><br><strong>2019</strong><br>First seed</div>
+    <div class="milestone-item"><span style="font-size: 2.4rem;">📘</span><br><strong>2021</strong><br>100th article</div>
+    <div class="milestone-item"><span style="font-size: 2.4rem;">🧪</span><br><strong>2023</strong><br>On‑site trial garden</div>
+    <div class="milestone-item"><span style="font-size: 2.4rem;">🌎</span><br><strong>2025</strong><br>Global readership</div>
+  </div>
+
+  <!-- what makes us different (unique) -->
+  <div style="background: #f1ede5; border-radius: 40px 4px 40px 4px; padding: 2rem 2.2rem; margin: 2.5rem 0; border:1px solid #d3c8b7;">
+    <h2 style="border-left: none; padding-left:0; margin-top:0;">Why Rootshire?</h2>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.8rem;">
+      <div><strong>📊 Data‑backed</strong><br>We cite studies, share trial data, and update when new evidence emerges.</div>
+      <div><strong>🧑‍🌾 Practical</strong><br>Every technique is tested in our own garden before we recommend it.</div>
+      <div><strong>📝 Ad‑free</strong><br>No pop‑ups, no sponsored content — just knowledge.</div>
+      <div><strong>🌿 Community</strong><br>We answer emails and engage with readers personally.</div>
+    </div>
+  </div>
+
+  <!-- featured in / press (unique) -->
+  <div style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: space-between; align-items: center; margin: 2.5rem 0; background: #e8e1d4; border-radius: 60px 8px 60px 8px; padding: 1.8rem 2.5rem; border:1px solid #cec0ad;">
+    <div><span style="font-size: 0.9rem; letter-spacing: 1px; color:#2f3f2a;">AS SEEN IN</span><br>
+      <span style="font-weight: 600; font-size: 1.3rem; font-family: 'Cormorant Garamond', serif;">The Garden Chronicle · Permaculture Magazine · BBC Gardeners' World (online)</span>
+    </div>
+    <div style="background: #2b3a2b; color: #f0ece3; padding: 0.3rem 2rem; border-radius: 60px;">★ 4.9 / 5 reader rating</div>
+  </div>
+
+  <!-- quote / philosophy -->
+  <blockquote style="font-size: 1.6rem; font-family: 'Cormorant Garamond', serif; border-left: 8px solid var(--root-accent); padding: 1rem 2rem; margin: 2.5rem 0; background: #f6f3ec; border-radius: 0 40px 0 40px;">
+    “A garden is not a place, but a process. We are here to document that process, honestly.”
+    <footer style="font-size: 1rem; font-family: 'Inter', sans-serif; margin-top: 0.3rem;">— Cyrentha Rootshire</footer>
+  </blockquote>
+
+  <!-- newsletter (same as index) -->
+  <div class="newsletter" style="background: #2b3a2b; color: #f0ece3; padding: 2.8rem 2.5rem; border-radius: 60px 8px 60px 8px; margin: 3.5rem 0 2rem;">
+    <h2 style="color:#f0ece3; border-left: 6px solid #c9b69a; padding-left:1.2rem;">The Pavilion Letter</h2>
+    <p style="color:#d4d0c4; max-width: 50ch;">Weekly insights from our garden — no spam, just soil‑deep knowledge.</p>
+    <div style="display: flex; flex-wrap: wrap; gap: 0.6rem;">
+      <input type="email" placeholder="your email address" value="" style="background: #f6f3ec; border: none; padding: 0.8rem 1.5rem; border-radius: 60px; width: 260px; max-width: 100%; font-size: 1rem; color: #1f2a1f;">
+      <button style="background: var(--root-warm); border: none; padding: 0.8rem 2rem; border-radius: 60px; font-weight: 600; color: #1f2a1f; margin-left: 0.5rem; cursor: pointer; transition: 0.15s;">Subscribe</button>
+    </div>
+  </div>
+
+  <!-- footer -->
+  <footer class="footer">
+    <div>© 2026 Rootshire Pavilion · cultivated since 2019</div>
+    <div style="display: flex; gap: 1.8rem;">
+      <a href="#">Privacy</a>
+      <a href="#">Colophon</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </footer>
+
+  <!-- hidden note -->
+  <div style="display: none;">about page · depth, team, mission</div>
+</div>
+</body>
+</html>

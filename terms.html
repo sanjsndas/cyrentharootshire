@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms of Service · Rootshire Pavilion</title>
+  <!-- unique typography: system + serif accent (mirroring about & index) -->
+  <style>
+    /* ----- reset & base (mirroring homepage & about) ----- */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #f6f3ec;  /* warm paper */
+      color: #1f2a1f;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.7;
+      padding: 0 1.5rem;
+    }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
+    .container {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 1.5rem 0 3rem;
+    }
+
+    /* ----- color palette: earth & stone (same as index) ----- */
+    :root {
+      --root-bg: #f6f3ec;
+      --root-text: #1f2a1f;
+      --root-accent: #4f6b4a;    /* sage */
+      --root-accent-light: #7d9b74;
+      --root-warm: #c9b69a;      /* clay */
+      --root-dark: #2b3a2b;
+      --root-card-bg: #ffffffd9;
+      --root-border: #dcd3c4;
+      --root-shadow: 0 12px 30px -12px rgba(40, 50, 30, 0.12);
+    }
+
+    /* ----- unique typography & spacing (same as about) ----- */
+    h1, h2, h3, h4 {
+      font-family: 'Cormorant Garamond', 'Times New Roman', serif;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      color: #1f2a1f;
+    }
+    h1 { font-size: 3.2rem; margin-bottom: 0.5rem; }
+    h2 { font-size: 2.4rem; margin: 2.5rem 0 1rem; border-left: 6px solid var(--root-accent); padding-left: 1.2rem; }
+    h3 { font-size: 1.7rem; margin: 2rem 0 0.8rem; color: #2e422e; }
+    h4 { font-size: 1.3rem; margin: 1.2rem 0 0.4rem; }
+    p { margin-bottom: 1.2rem; max-width: 75ch; }
+    .lead { font-size: 1.2rem; color: #2f3f2a; }
+
+    /* ---- header / nav (unique) ---- */
+    .site-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.2rem 0 0.8rem;
+      border-bottom: 2px solid var(--root-border);
+      margin-bottom: 2.5rem;
+    }
+    .brand {
+      font-size: 2.1rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      background: var(--root-dark);
+      color: #f2ede4;
+      padding: 0.1rem 1.2rem 0.2rem;
+      border-radius: 40px 8px 40px 8px;
+      transform: rotate(-0.5deg);
+    }
+    .brand span { font-weight: 300; color: var(--root-warm); }
+    .nav-links {
+      display: flex;
+      gap: 2.2rem;
+      font-weight: 500;
+      font-size: 1.05rem;
+    }
+    .nav-links a { padding: 0.2rem 0; border-bottom: 2px solid transparent; transition: 0.15s; }
+    .nav-links a:hover { border-bottom-color: var(--root-accent); color: #2b402b; }
+    .nav-links a.active { border-bottom-color: var(--root-accent); }
+
+    /* ---- cards & modules (unique card design) ---- */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 2.2rem;
+      margin: 2.5rem 0;
+    }
+    .card {
+      background: var(--root-card-bg);
+      backdrop-filter: blur(2px);
+      border: 1px solid var(--root-border);
+      border-radius: 28px 8px 28px 8px;
+      padding: 1.8rem 1.8rem 2.2rem;
+      box-shadow: var(--root-shadow);
+      transition: transform 0.1s ease, box-shadow 0.2s;
+    }
+    .card:hover { transform: translateY(-4px); box-shadow: 0 20px 35px -16px rgba(40, 50, 30, 0.2); }
+    .card .tag {
+      display: inline-block;
+      background: var(--root-accent);
+      color: white;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 0.2rem 0.9rem;
+      border-radius: 30px;
+      margin-bottom: 1rem;
+    }
+    .card h3 { margin-top: 0.2rem; border-left: none; padding-left: 0; font-size: 1.7rem; }
+    .card p { font-size: 0.98rem; color: #2d3d2d; }
+
+    /* hero about unique — reused for terms hero */
+    .hero-about {
+      background: #e8e1d4;
+      background-image: radial-gradient(circle at 70% 20%, #dacfc0 0%, #e8e1d4 90%);
+      padding: 3rem 3rem;
+      border-radius: 60px 12px 60px 12px;
+      margin-bottom: 3rem;
+      border: 1px solid #cec0ad;
+    }
+    .hero-about h1 { font-size: 3.6rem; max-width: 14ch; }
+    .hero-about .lead { font-size: 1.4rem; max-width: 60ch; margin-top: 0.5rem; }
+
+    /* terms specific: legal blocks */
+    .terms-block {
+      background: #f1ede5;
+      border-radius: 40px 4px 40px 4px;
+      padding: 2rem 2.2rem;
+      margin: 2rem 0;
+      border: 1px solid #d3c8b7;
+    }
+    .terms-block h3 { margin-top: 0.2rem; border-left: none; padding-left: 0; }
+    .terms-block ul { list-style: none; padding-left: 0; }
+    .terms-block ul li { padding: 0.6rem 0; border-bottom: 1px dashed #d8cebc; display: flex; gap: 0.8rem; }
+    .terms-block ul li:last-child { border-bottom: none; }
+    .terms-block ul li strong { min-width: 120px; }
+
+    /* stat badge */
+    .stat-badge {
+      background: #2b3a2b;
+      color: #f0ece3;
+      padding: 0.1rem 1rem;
+      border-radius: 40px;
+      font-size: 0.8rem;
+      letter-spacing: 0.5px;
+    }
+
+    /* footer */
+    .footer {
+      border-top: 2px solid var(--root-border);
+      margin-top: 3rem;
+      padding: 2.5rem 0 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      font-size: 0.9rem;
+    }
+
+    /* responsiveness */
+    @media (max-width: 750px) {
+      .site-header { flex-direction: column; align-items: start; gap: 0.8rem; }
+      .nav-links { flex-wrap: wrap; gap: 1.2rem; }
+      .hero-about h1 { font-size: 2.8rem; }
+      .hero-about { padding: 2rem 1.5rem; }
+    }
+    .flex { display: flex; flex-wrap: wrap; gap: 1.2rem; }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <!-- header (mirroring about / index) -->
+  <header class="site-header">
+    <div class="brand">Cyrentha Rootshire<span>Pavilion</span></div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="terms.html" class="active">Terms Of Privacy</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="cookies.html">Cookies Policy</a>
+    </div>
+  </header>
+
+  <!-- terms hero (similar to about hero) -->
+  <section class="hero-about">
+    <div style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: center;">
+      <div style="flex: 2;">
+        <h1>Terms of <br>Service</h1>
+        <p class="lead">The legal framework that keeps Rootshire Pavilion rooted in trust, transparency, and good faith. Please read carefully.</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 1.2rem;">
+          <span class="stat-badge">📜 last updated: 2026-07-09</span>
+          <span class="stat-badge">⚖️ governing law: UK & EU</span>
+        </div>
+      </div>
+      <div style="flex: 1; min-width: 140px;">
+        <div style="background: #b7aa96; border-radius: 120px 8px 120px 8px; padding: 1.8rem 0.8rem; border: 1px solid #9f907c; text-align: center; color: #1f2a1f; box-shadow: var(--root-shadow);">
+          <span style="font-size: 2.8rem;">⚖️</span><br>
+          <span style="background: #2b3a2b; color: #f0ece3; padding: 0.1rem 0.8rem; border-radius: 30px;">v.2.4</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- main terms content -->
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; margin: 2rem 0 3rem;">
+    <div>
+      <h2 style="border-left-color: #c9b69a;">Acceptance</h2>
+      <p>By accessing or using Rootshire Pavilion (the “Site”), you agree to be bound by these Terms of Service. If you do not agree, please do not use the Site.</p>
+      <p>We reserve the right to update these terms at any time. Continued use constitutes acceptance of the revised terms.</p>
+    </div>
+    <div>
+      <h2 style="border-left-color: #7d9b74;">Content & use</h2>
+      <p>All content on this Site — including text, graphics, and data — is for informational purposes only. You may not reproduce, distribute, or commercially exploit any content without explicit written permission.</p>
+      <p>You are granted a limited, non‑exclusive license to access and view the content for personal, non‑commercial use.</p>
+    </div>
+  </div>
+
+  <!-- detailed terms as cards (unique layout) -->
+  <div class="terms-block">
+    <h3>📋 User obligations</h3>
+    <ul>
+      <li><strong>Accuracy</strong> — You agree to provide accurate information when interacting with the Site.</li>
+      <li><strong>Prohibited use</strong> — You may not use the Site for unlawful purposes, to harass, or to distribute malicious software.</li>
+      <li><strong>Intellectual property</strong> — All trademarks, logos, and original content are property of Rootshire Pavilion.</li>
+      <li><strong>Comments & feedback</strong> — By submitting comments or ideas, you grant us a non‑exclusive, royalty‑free license to use them.</li>
+    </ul>
+  </div>
+
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin: 2rem 0;">
+    <div class="card" style="border-radius: 28px 8px 28px 8px;">
+      <div class="tag">disclaimer</div>
+      <h3>No warranty</h3>
+      <p>The information on this Site is provided “as is” without warranty of any kind, either express or implied. We do not guarantee the accuracy, completeness, or usefulness of any content. Gardening results may vary.</p>
+    </div>
+    <div class="card" style="border-radius: 28px 8px 28px 8px;">
+      <div class="tag">liability</div>
+      <h3>Limitation</h3>
+      <p>In no event shall Rootshire Pavilion be liable for any indirect, incidental, or consequential damages arising from your use of the Site, including loss of data or profits. Our total liability is limited to the amount you paid to access the Site (if any).</p>
+    </div>
+  </div>
+
+  <!-- third-party / external links -->
+  <div style="background: #e8e1d4; border-radius: 60px 8px 60px 8px; padding: 2rem 2.5rem; margin: 2.5rem 0; border: 1px solid #cec0ad;">
+    <h2 style="border-left: none; padding-left:0; margin-top:0;">External links & affiliates</h2>
+    <p style="max-width: 100%;">Our Site may contain links to third‑party websites. We are not responsible for the content, privacy policies, or practices of any external sites. We may participate in affiliate programs — we only recommend products we genuinely use.</p>
+    <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; margin-top: 1rem;">
+      <span class="stat-badge" style="background: #4f6b4a;">🔗 affiliate disclosure</span>
+      <span class="stat-badge" style="background: #4f6b4a;">📌 sponsored content: none</span>
+    </div>
+  </div>
+
+  <!-- termination & governing law -->
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin: 2rem 0 3rem;">
+    <div style="background: #f1ede5; border-radius: 40px 4px 40px 4px; padding: 1.8rem 2rem; border:1px solid #d3c8b7;">
+      <h3 style="margin-top:0;">Termination</h3>
+      <p>We reserve the right to suspend or terminate your access to the Site at our sole discretion, without notice, for conduct that violates these terms or is otherwise harmful.</p>
+    </div>
+    <div style="background: #f1ede5; border-radius: 40px 4px 40px 4px; padding: 1.8rem 2rem; border:1px solid #d3c8b7;">
+      <h3 style="margin-top:0;">Governing law</h3>
+      <p>These terms shall be governed by and construed in accordance with the laws of England and Wales, without regard to conflict of law principles. Any disputes shall be resolved in the courts of London.</p>
+    </div>
+  </div>
+
+  <!-- contact for legal questions (unique) -->
+  <div style="background: #2b3a2b; color: #f0ece3; padding: 2.5rem 2.5rem; border-radius: 60px 8px 60px 8px; margin: 2.5rem 0;">
+    <h2 style="color:#f0ece3; border-left: 6px solid #c9b69a; padding-left:1.2rem;">Questions about terms?</h2>
+    <p style="color:#d4d0c4; max-width: 60ch;">We're happy to clarify. Reach out to our legal team via the contact page, and we'll respond within 3 business days.</p>
+    <div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 0.8rem;">
+      <a href="contact.html" style="background: var(--root-warm); color: #1f2a1f; padding: 0.6rem 2rem; border-radius: 60px; font-weight: 600;">Contact us</a>
+      <span style="background: #4f6b4a; padding: 0.6rem 1.8rem; border-radius: 60px;">📧 legal@rootshirepavilion.co</span>
+    </div>
+  </div>
+
+  <!-- footer -->
+  <footer class="footer">
+    <div>© 2026 Rootshire Pavilion · cultivated since 2019</div>
+    <div style="display: flex; gap: 1.8rem;">
+      <a href="privacy.html">Privacy</a>
+      <a href="#">Colophon</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </footer>
+
+  <!-- hidden note -->
+  <div style="display: none;">terms page · legal, privacy, service</div>
+</div>
+</body>
+</html>
